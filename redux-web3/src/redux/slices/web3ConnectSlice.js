@@ -17,6 +17,7 @@ export const initialState = {
 export const loadBlockchain = createAsyncThunk("loadBlockchain", async (_, thunkAPI) => {
     try {
         //network should be rinkeby
+        console.log("Web3.givenProvider.chainId ",Web3.givenProvider.chainId )
         if (Web3.givenProvider && Web3.givenProvider.chainId == "0x4") {
             await Web3.givenProvider.enable();
             const web3 = new Web3(Web3.givenProvider);
